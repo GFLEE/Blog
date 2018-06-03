@@ -1,0 +1,14 @@
+.footer{
+
+        position: relative;
+        width:98%;
+        height: 30px;
+        bottom: 0px;
+    
+
+}
+.footer span{
+        color:grey;
+        padding-left:47%;
+        font-size:.3em;
+}

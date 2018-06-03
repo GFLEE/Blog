@@ -1,0 +1,32 @@
+<br>
+<div *ngIf='delay' class='article'>
+  <p>{{articles.view}}</p>
+  <section class='section' *ngFor='let article of array'>
+
+    <h2>
+        <!-- (click)='detail()' -->
+      <a class='title' [routerLink]="['/articles',article._id]">{{article.title}}</a>
+      <i>
+        <time class='date'>{{article.date}}</time>
+      </i>
+    </h2>
+
+
+    <p class='summary'>{{article.summary}}.....</p>
+
+    <ul class='info'>
+      <li><img src='../../assets/imgs/word.png'/> {{article.word}}</li>
+      <li><img src='../../assets/imgs/read.png'/> {{article.view}}</li>
+      <li><img src='../../assets/imgs/comment.png'/> {{article.comment ||0 }}</li>
+    </ul>
+    <p>
+      <i class='label' *ngFor='let label of article.labels'>{{label}}</i>
+    </p>
+
+
+
+  </section><br>
+  <app-no-more *ngIf='end'></app-no-more>
+  <app-load-more  *ngIf='noMore' (click)='loadMore()'></app-load-more>
+
+</div>
